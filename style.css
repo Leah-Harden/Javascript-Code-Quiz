@@ -1,0 +1,51 @@
+#home-page {}
+
+header {}
+
+#time {
+    position: absolute;
+    top: 10px;
+    right: 70px;
+}
+
+#time-number {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+}
+
+.center {
+    padding: 100px;
+    text-align: center;
+}
+
+.bold {
+    padding: 10px;
+}
+
+button {
+    padding: 10px 40px;
+    color: aliceblue;
+    background-color: blueviolet;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+}
+
+/* This is the pages */
+
+
+#one-page {
+    display: none;
+}
+
+ul {
+    list-style: none;
+    margin: 100px 800px;
+}
+
+.bigger {
+    padding: 10px;
+}
+
+.question-area {}
