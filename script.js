@@ -1,21 +1,24 @@
 //var
 var secs
 
-var question1 = [{
+var questions = [{
     id: 1,
     titles: "How do you call a Function?",
-    answers: "This is wrong", "it is wrong", "is wrong"
+    answers: ["This is wrong", "it is wrong", "is wrong"],
+    right: 123
 }
     , {
     id: 2,
     titles: "How do you call a Function2?",
-    answers: "worag2", "woang2", "worg2"
+    answers: ["worag2", "woang2", "worg2"],
+    right: 113
 }
     ,
 {
     id: 3,
     titles: "How do you call a Function3?",
-    answers: "wrogn3", "wrwaf3", "wrsdaf3"
+    answers: ["wrogn3", "wrwaf3", "wrsdaf3"],
+    right: 111
 }
 ]
 //var list = []
@@ -23,18 +26,18 @@ var question1 = [{
 //console.log(list)
 
 //var
-document.getElementById("demo").innerHTML =
 
 
-    function rightQuestion() {
-        for ()
 
+
+function rightQuestion() {
+    for (var i = 0; i < questions.length; i++)
+        document.getElementById("wrong1").innerHTML = questions[i].answers[0]
+    document.getElementById("wrong2").innerHTML = questions[i].answers[1]
+    document.getElementById("wrong3").innerHTML = questions[i].answers[2]
+    document.getElementById("title").innerHTML = questions[i].title
+    document.getElementById("right").innerHTML = questions[i].right
 }
-
-
-
-
-
 
 
 
@@ -43,6 +46,8 @@ document.getElementById("demo").innerHTML =
 //listerers
 
 document.getElementById("start quiz").addEventListener("click", startGame);
+document.getElementById("right").addEventListener("click", rightQuestion);
+
 
 //listerers
 
@@ -51,7 +56,7 @@ document.getElementById("start quiz").addEventListener("click", startGame);
 
 //timer
 function timer() {
-    document.getElementById("wrong").addEventListener("click", wrongChoice);
+    document.getElementById("wrong1", "wrong2", "wrong3").addEventListener("click", wrongChoice);
     var secs = 59;
     var countDown = setInterval(function () {
         document.getElementById("time-number").innerHTML = secs;
@@ -68,20 +73,15 @@ function timer() {
 
 }
 
-
-
 //timer
 
 
 function startGame() {
     var x = document.getElementById("home-page");
     x.style.display = "none";
-    var y = document.getElementById("one-page");
+    var y = document.getElementById("page");
     y.style.display = "block";
     timer()
 
 }
 
-function pageSwap() {
-
-}
