@@ -4,20 +4,20 @@ var secs
 var questions = [{
     id: 1,
     titles: "How do you call a Function?",
-    answers: ["This is wrong", "it is wrong", "is wrong"],
+    answers: ["This is wrong a", "it is wrong b", "is wrong c "],
     right: 123
 }
     , {
     id: 2,
     titles: "How do you call a Function2?",
-    answers: ["worag2", "woang2", "worg2"],
+    answers: ["worag2a", "woang2b", "worg2c"],
     right: 113
 }
     ,
 {
     id: 3,
     titles: "How do you call a Function3?",
-    answers: ["wrogn3", "wrwaf3", "wrsdaf3"],
+    answers: ["wrogn3a", "wrwaf3b", "wrsdaf3c"],
     right: 111
 }
 ]
@@ -31,14 +31,14 @@ var questions = [{
 
 
 function rightQuestion() {
-    for (var i = 0; i < questions.length; i++)
+    for (var i = 0; i < questions.length; i++) {
         document.getElementById("wrong1").innerHTML = questions[i].answers[0]
-    document.getElementById("wrong2").innerHTML = questions[i].answers[1]
-    document.getElementById("wrong3").innerHTML = questions[i].answers[2]
-    document.getElementById("title").innerHTML = questions[i].title
-    document.getElementById("right").innerHTML = questions[i].right
+        document.getElementById("wrong2").innerHTML = questions[i].answers[1]
+        document.getElementById("wrong3").innerHTML = questions[i].answers[2]
+        document.getElementById("title").innerHTML = questions[i].titles
+        document.getElementById("right").innerHTML = questions[i].right
+    }
 }
-
 
 
 
