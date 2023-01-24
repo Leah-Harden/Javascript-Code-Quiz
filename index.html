@@ -22,27 +22,42 @@
             <h1 class="bold">Coding Quiz Challenge</h1>
             <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
                 answers will penlize your score and time by ten seconds!</p>
-            <button onclick="myFunction()" id="start quiz">Start Quiz </button>
+            <button onclick="startGame()" id="start quiz">Start Quiz </button>
         </div>
     </div>
-    <div id="one-page">
+    <div id="page">
         <header>
         </header>
         <div class="question-area">
             <ul>
-                <li class="bigger">
+                <li class="title">
                     <h1>This is a question! It is very hard.</h1>
                 </li>
-                <li><button>This is a answer</button></li>
-                <li><button>this is a different answer</button></li>
-                <li><button>This is wrong</button></li>
-                <li><button>This is right</button></li>
+                <div class="choices">
+                    <li><button>This is a answer</button></li>
+                    <li><button>this is a different answer</button></li>
+                    <li><button onclick="wrongChoice()" id="wrong">This is wrong</button></li>
+                    <li><button id="right">This is right</button></li>
+                </div>
             </ul>
         </div>
     </div>
-    <div id="two-page">
-        <header>
-        </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="two-page" class="hide">
+
         <div class="question-area">
             <ul>
                 <li class="bigger">
@@ -56,8 +71,6 @@
         </div>
     </div>
     <div id="three-page">
-        <header>
-        </header>
         <div class="question-area">
             <ul>
                 <li class="bigger">
@@ -71,8 +84,7 @@
         </div>
     </div>
     <div id="four-page">
-        <header>
-        </header>
+
         <div class="question-area">
             <ul>
                 <li class="bigger">
@@ -86,8 +98,7 @@
         </div>
     </div>
     <div id="five-page">
-        <header>
-        </header>
+
         <div class="question-area">
             <ul>
                 <li class="bigger">

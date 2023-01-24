@@ -35,7 +35,7 @@ button {
 /* This is the pages */
 
 
-#one-page {
+#page {
     display: none;
 }
 
@@ -44,7 +44,7 @@ ul {
     margin: 100px 800px;
 }
 
-.bigger {
+.title {
     padding: 10px;
 }
 
