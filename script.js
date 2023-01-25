@@ -29,24 +29,33 @@ document.getElementById("choice3").addEventListener("click", rightQuestion);
 
 //listerers
 
-// checks the question
-$("#choice0,#choice1,#choice2 choice3").click(function () {
-    var userAnswer = this.getAttribute("data-value");
-    if (userAnswer === questions.answers[questions.right]) { console.log("right") } else { console.log("wrong") }
+//  $("#choice0,#choice1,#choice2 choice3").click(function () {
+//     var userAnswer = this.getAttribute("data-value");
+//      if (userAnswer === questions.answers[questions.right]) { console.log("right") } else { console.log("wrong") }
+//  })
+
+$("#choice0,#choice1,#choice2,#choice3").click(function (e) {
+    console.log(e.target)
+    //get the user answer
+    var userAnswer = e.target.innerHTML;
+    console.log(userAnswer);
+    if (userAnswer === questions.answers[questions.right]) { console.log("right"), userAnswer === true } else { console.log("wrong") }
 })
-// checks the question
 
 //choose the right answer
 function rightQuestion() {
     for (var i = 0; i < questions.length; i++) {
         var random = Math.floor(Math.random() * questions[i].answers.length)
         {
-            if (userAnswer === right) {
-                document.getElementById("choice0").innerHTML = questions[i].answers[0]
-                document.getElementById("choice1").innerHTML = questions[i].answers[1]
-                document.getElementById("choice2").innerHTML = questions[i].answers[2]
-                document.getElementById("choice3").innerHTML = questions[i].right
-                document.getElementById("title").innerHTML = questions[i].titles
+            // checks the question
+
+            // checks the question
+            if (userAnswer === true) {
+                document.getElementById("#choice0").innerHTML = questions[i].answers[0]
+                document.getElementById("#choice1").innerHTML = questions[i].answers[1]
+                document.getElementById("#choice2").innerHTML = questions[i].answers[2]
+                document.getElementById("#choice3").innerHTML = questions[i].right
+                document.getElementById("#title").innerHTML = questions[i].titles
             } else {
                 console.log("wrong")
             }
@@ -86,6 +95,7 @@ function startGame() {
     var y = document.getElementById("page");
     y.style.display = "block";
     timer()
+    rightQuestion()
 
 }
 // the game
