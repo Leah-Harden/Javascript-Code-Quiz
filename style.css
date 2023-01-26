@@ -19,6 +19,10 @@ header {}
     text-align: center;
 }
 
+.real-center {
+    text-align: center;
+}
+
 .bold {
     padding: 10px;
 }
@@ -32,10 +36,24 @@ button {
     margin: 10px;
 }
 
+footer {
+    text-align: center;
+    font-size: 20px;
+    color: darkgray;
+}
+
+hr {
+    width: 1000px;
+}
+
+#hide-footer {
+    display: none;
+}
+
 /* This is the pages */
 
 
-#page {
+#one-page {
     display: none;
 }
 
@@ -49,3 +67,37 @@ ul {
 }
 
 .question-area {}
+
+#two-page {
+    display: none;
+}
+
+#three-page {
+    display: none;
+}
+
+#four-page {
+    display: none;
+}
+
+#five-page {
+    display: none;
+}
+
+#winning-page {
+    display: none;
+}
+
+#highscore-page {
+    display: none;
+}
+
+#highscore-list {
+    background-color: rgb(52, 63, 72);
+    color: rgb(202, 226, 247);
+    border-radius: 4px;
+    justify-content: left;
+    padding: 4% 5%;
+    width: 200px;
+    display: grid;
+}

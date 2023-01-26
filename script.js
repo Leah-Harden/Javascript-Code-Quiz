@@ -1,47 +1,22 @@
 //var
-var sec
-
-var questions = [{
-    id: 1,
-    titles: "How do you call a Function?",
-    answers: ["This is wrong a", "right", "it is wrong b", "is wrong c "],
-    right: 1
-},
-{
-    id: 2,
-    titles: "How do you call a Function2?",
-    answers: ["right", "worag2a", "woang2b", "worg2c"],
-    right: 0
-}
-    , {
-    id: 3,
-    titles: "How do you call a Function3?",
-    answers: ["wrogn3a", "wrwaf3b", "right", "wrsdaf3c"],
-    right: 2
-}]
+var secs = 59
+var score = 0
 //var
 
 //listerers
 
 document.getElementById("start quiz").addEventListener("click", startGame);
-document.getElementById("choice3").addEventListener("click", rightQuestion);
-
-
 //listerers
+/*
+     var userAnswer = this.getAttribute("data-value");
+     if (userAnswer === questions.answers[questions.right]) { console.log("right") } else { console.log("wrong") }
+ })
 
-//  $("#choice0,#choice1,#choice2 choice3").click(function () {
-//     var userAnswer = this.getAttribute("data-value");
-//      if (userAnswer === questions.answers[questions.right]) { console.log("right") } else { console.log("wrong") }
-//  })
-
-$("#choice0,#choice1,#choice2,#choice3").click(function (e) {
-    console.log(e.target)
-    //get the user answer
+$("#choice0,#choice1,#choice2 choice3").click(function () {
     var userAnswer = e.target.innerHTML;
     console.log(userAnswer);
-    if (userAnswer === questions.answers[questions.right]) { console.log("right"), userAnswer === true } else { console.log("wrong") }
+    if (userAnswer === questions[0].right) { console.log("right") } else { console.log("wrong") }
 })
-
 //choose the right answer
 function rightQuestion() {
     for (var i = 0; i < questions.length; i++) {
@@ -49,53 +24,113 @@ function rightQuestion() {
         {
             // checks the question
 
-            // checks the question
-            if (userAnswer === true) {
-                document.getElementById("#choice0").innerHTML = questions[i].answers[0]
-                document.getElementById("#choice1").innerHTML = questions[i].answers[1]
-                document.getElementById("#choice2").innerHTML = questions[i].answers[2]
-                document.getElementById("#choice3").innerHTML = questions[i].right
-                document.getElementById("#title").innerHTML = questions[i].titles
-            } else {
-                console.log("wrong")
-            }
+            $("#choice0,#choice1,#choice2,#choice3").click(function (e) {
+                console.log(e.target)
+                //get the user answer
+                // checks the question
+                if (userAnswer === true) {
+                    document.getElementById("choice0").innerText = questions[i].answers[0]
+                    document.getElementById("choice1").innerText = questions[i].answers[1]
+                    document.getElementById("choice2").innerText = questions[i].answers[2]
+                    document.getElementById("choice3").innerText = questions[i].right
+                    document.getElementById("title").innerText = questions[i].titles
+                    //    } else {
+                    //          console.log("wrong")
+                }
+            })
         }
     }
 }
 //choose the right answer
 
-
+*/
 
 
 
 //timer
 function timer() {
-    //document.getElementById("choice0", "choice1", "choice2").addEventListener("click", wrongChoice);
-    var secs = 59;
     var countDown = setInterval(function () {
         document.getElementById("time-number").innerHTML = secs;
         secs--;
         if (secs < 0) {
             clearInterval(secs);
             document.getElementById("time-number").innerHTML = "Done";
+            document.location.reload()
         }
     }, 1000)
-    $("1").click(function () {
-        console.log("hello"),
-            secs -= 10
-    })
 }
-
 //timer
+$(".answers").click(function () {
+    var answer = $(this).attr("data-value")
+    if (answer === 'right') {
+        score++
+        document.getElementById("footer").innerHTML = "right!"
+    } else {
+        secs -= 10
+        document.getElementById("footer").innerHTML = "wrong!"
+    }
+})
 
+function getHighscore() {
+    localStorage.setItem("thisScore", score)
+    var x = localStorage.getItem('thisScore');
+    $('#highscore-list').append('<il>', x, '<il>')
+}
 // the game
 function startGame() {
+    score = 0
     var x = document.getElementById("home-page");
     x.style.display = "none";
-    var y = document.getElementById("page");
+    var y = document.getElementById("one-page");
     y.style.display = "block";
-    timer()
-    rightQuestion()
+    var z = document.getElementById("hide-footer");
+    z.style.display = "block";
 
+    timer()
 }
 // the game
+$("#right0,#choice0,#choice1,#choice2").click(function () {
+    var x = document.getElementById("one-page");
+    x.style.display = "none";
+    var y = document.getElementById("two-page");
+    y.style.display = "block";
+})
+
+$("#right1,#choice4,#choice5,#choice6").click(function () {
+    var x = document.getElementById("two-page");
+    x.style.display = "none";
+    var y = document.getElementById("three-page");
+    y.style.display = "block";
+})
+
+$("#right2,#choice4,#choice5,#choice6").click(function () {
+    var x = document.getElementById("three-page");
+    x.style.display = "none";
+    var y = document.getElementById("four-page");
+    y.style.display = "block";
+})
+$("#right3,#choice7").click(function () {
+    var x = document.getElementById("four-page");
+    x.style.display = "none";
+    var y = document.getElementById("five-page");
+    y.style.display = "block";
+
+})
+$("#right4").click(function () {
+    var x = document.getElementById("five-page");
+    x.style.display = "none";
+    var z = document.getElementById("hide-footer");
+    z.style.display = "none";
+    var y = document.getElementById("winning-page");
+    y.style.display = "block";
+})
+
+$("#continue").click(function () {
+    var x = document.getElementById("winning-page");
+    x.style.display = "none";
+    var y = document.getElementById("highscore-page");
+    y.style.display = "block";
+    getHighscore()
+})
+//Checks answer
+// Checks answer

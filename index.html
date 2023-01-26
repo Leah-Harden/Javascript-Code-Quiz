@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 
-<p>High score</p>
+
 <p id="time">Time:
 <p id="time-number"></p>
 </p>
@@ -19,33 +19,140 @@
         <header>
         </header>
         <div class="center">
-            <h1 class="bold">Coding Quiz Challenge</h1>
+            <h1 class="bold">Florida Quiz Challenge</h1>
             <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
                 answers will penlize your score and time by ten seconds!</p>
             <button onclick="startGame()" id="start quiz">Start Quiz </button>
         </div>
     </div>
-    <div id="page">
+
+
+    <div id="one-page">
         <header>
         </header>
         <div class="question-area">
             <ul>
                 <li class="title">
-                    <h1 id="title">This is a question! It is very hard.</h1>
+                    <h1 id="title">What is Florida's Nickname?</h1>
                 </li>
                 <div class="choices">
-                    <li><button data-value=0 id="choice0">This is a answer</button></li>
-                    <li><button data-value=1 id="choice1">this is a different answer</button></li>
-                    <li><button data-value=2 id="choice2">This is wrong</button></li>
-                    <li><button data-value=3 id="choice3">This is right</button></li>
+                    <li><button data-value='wrong' id="choice0" class="answers">The Sun State</button></li>
+                    <li><button data-value='wrong' id="choice1" class=" answers">Alligator and Croc State</button>
+                    </li>
+                    <li><button data-value='wrong' id="choice2" class="answers">River State</button></li>
+                    <li><button data-value='right' id="right0" class="answers">The Sunshine State</button></li>
                 </div>
             </ul>
         </div>
     </div>
 
+    <div id="two-page">
+        <header>
+        </header>
+        <div class="question-area">
+            <ul>
+                <li class="title">
+                    <h1 id="title">Roughly 90% of all of this product that is consumed in the U.S. comes from Florida.
+                        Know what it is?</h1>
+                </li>
+                <div class="choices">
+                    <li><button data-value=wrong class="answers" id="choice4">Corn</button></li>
+                    <li><button data-value=right class="answers" id="right1">Orange juice</button></li>
+                    <li><button data-value=wrong class="answers" id="choice5">Cherries</button></li>
+                    <li><button data-value=wrong class="answers" id="choice6">Beef</button></li>
+
+                </div>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="three-page">
+        <header>
+        </header>
+        <div class="question-area">
+            <ul>
+                <li class="title">
+                    <h1 id="title">Which of these is the city of Cape Canaveral most famous for?</h1>
+                </li>
+                <div class="choices">
+                    <li><button data-value=wrong class="answers" id="choice4">Theme parks</button></li>
+                    <li><button data-value=right class="answers" id="right2">Rocket launches</button></li>
+                    <li><button data-value=wrong class="answers" id="choice5">Diamond mines</button></li>
+                    <li><button data-value=wrong class="answers" id="choice6">Popular zoo</button></li>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div id="four-page">
+        <header>
+        </header>
+        <div class="question-area">
+            <ul>
+                <li class="title">
+                    <h1 id="title">Know which of these sports is most closely associated with the beach town of Daytona
+                        on Florida's Atlantic coast?</h1>
+                </li>
+                <div class="choices">
+                    <li>
+                        <button data-value=right class="answers" id="right3">Auto racing</button>
+                    </li>
+                    <button data-value=right class="answers" id="choice7">Baseball</button>
+                    <li><button data-value=wrong class="answers" id="choice8">Baseball</button></li>
+                    <li><button data-value=wrong class="answers" id="choice9">Water polo</button></li>
+
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div id="five-page">
+        <header>
+        </header>
+        <div class="question-area">
+            <ul>
+                <li class="title">
+                    <h1 id="title">Can you identify the huge national park that dominates much of southwest Florida?
+                    </h1>
+                </li>
+                <div class="choices">
+                    <li><button data-value=wrong class="answers" id="choice10">Seminole National Park</button></li>
+                    <li><button data-value=wrong class="answers" id="choice11">Bluestone National Park</button></li>
+                    <li><button data-value=wrong class="answers" id="choice12">Florida Keys National Park</button></li>
+                    <li><button data-value=right class="answers" id="right4">Everglades National Park</button></li>
+
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div id="hide-footer">
+        <hr>
+        <footer class="footer" id="footer">This is right</footer>
+    </div>
+    <div id="winning-page">
+        <div class="center">
+            <h1 class="bold">Your score was :</h1>
+
+            <div id="highscore"></div>
+            <form>
+                <input type="text" id="name">
+            </form>
+            <p> You did Great!</p>
+            <button id="continue">continue</button><button>clear high scores</button>
+        </div>
+    </div>
+
+
+    <div id="highscore-page" class="real-center">
+        <h1 class="bold ">highscores!</h1>
+        <ul>
+            <il id="highscore-list"></il>
+        </ul>
+        <button>play again?</button>
+    </div>
+
+
     <script src="https://code.jquery.com/jquery-3.6.3.js"
         integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-
     <script src="script.js"></script>
 </body>
 
