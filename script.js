@@ -109,14 +109,14 @@ $("#right2,#choice4,#choice5,#choice6").click(function () {
     var y = document.getElementById("four-page");
     y.style.display = "block";
 })
-$("#right3,#choice7").click(function () {
+$("#right3,#choice7,#choice8,#choice9").click(function () {
     var x = document.getElementById("four-page");
     x.style.display = "none";
     var y = document.getElementById("five-page");
     y.style.display = "block";
 
 })
-$("#right4").click(function () {
+$("#right4,#choice10,#choice11,#choice12").click(function () {
     var x = document.getElementById("five-page");
     x.style.display = "none";
     var z = document.getElementById("hide-footer");
@@ -131,6 +131,9 @@ $("#continue").click(function () {
     var y = document.getElementById("highscore-page");
     y.style.display = "block";
     getHighscore()
+})
+$("#play-again").click(function () {
+    window.location.reload();
 })
 //Checks answer
 // Checks answer
