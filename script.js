@@ -1,6 +1,8 @@
 //var
 var secs = 59
 var score = 0
+var nameInput = $("#name")
+let form = document.querySelector('form');
 //var
 
 //listerers
@@ -71,16 +73,29 @@ $(".answers").click(function () {
     }
 })
 
+
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    let name = nameInput.val();
+    console.log(name)
+    window.localStorage.setItem('names', name);
+    console.log(localStorage)
+})
+
 function getHighscore() {
     var highscores = JSON.parse(window.localStorage.getItem('highscores')) || [];
-    highscores.push(score)
+    var name = window.localStorage.getItem("names")
+    highscores.push({
+        score: score,
+        name: name
+    })
+
     window.localStorage.setItem('highscores', JSON.stringify(highscores));
     for (var i = 0; i < highscores.length; i++) {
         var scoreList = document.createElement('li');
         scoreList.textContent = /* score stuff */
-            $('#highscore-list').append('<il>', highscores, '<il>')
-
-        /* use append like you did earlier to append scorelist to highscorelist */
+            $('#highscore-list').append('<li>', highscores[i].name + " " + highscores[i].score, '<li>')
     }
 }
 // the game
@@ -143,12 +158,4 @@ $("#play-again").click(function () {
     window.location.reload();
 })
 
-let form = document.querySelector('form');
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault()
-    let name = new FormData(form);
-
-    window.localStorage.setItem('names', JSON.stringify(name));
-    console.log(JSON.parse(localStorage))
-})

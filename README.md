@@ -4,4 +4,4 @@ Try to see how many you can get right!
 
 ![quiz](photos/Screenshot.png)
 
-https://github.com/Xinli32702/Javascript-Code-Quiz
+https://xinli32702.github.io/Javascript-Code-Quiz/
