@@ -72,9 +72,16 @@ $(".answers").click(function () {
 })
 
 function getHighscore() {
-    localStorage.setItem("thisScore", score)
-    var x = localStorage.getItem('thisScore');
-    $('#highscore-list').append('<il>', x, '<il>')
+    var highscores = JSON.parse(window.localStorage.getItem('highscores')) || [];
+    highscores.push(score)
+    window.localStorage.setItem('highscores', JSON.stringify(highscores));
+    for (var i = 0; i < highscores.length; i++) {
+        var scoreList = document.createElement('li');
+        scoreList.textContent = /* score stuff */
+            $('#highscore-list').append('<il>', highscores, '<il>')
+
+        /* use append like you did earlier to append scorelist to highscorelist */
+    }
 }
 // the game
 function startGame() {
@@ -135,5 +142,13 @@ $("#continue").click(function () {
 $("#play-again").click(function () {
     window.location.reload();
 })
-//Checks answer
-// Checks answer
+
+let form = document.querySelector('form');
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    let name = new FormData(form);
+
+    window.localStorage.setItem('names', JSON.stringify(name));
+    console.log(JSON.parse(localStorage))
+})
